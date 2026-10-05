@@ -1,0 +1,8 @@
+vendor_name,vendor_category,invoice_number,invoice_date,due_date,total_amount,currency,status,item_description,item_quantity,item_unit_price,item_amount,item_category
+Acme Cloud Services,SaaS,INV-1001,2024-01-15,2024-02-14,1200.00,USD,paid,Compute instances,1,900.00,900.00,Infrastructure
+Acme Cloud Services,SaaS,INV-1001,2024-01-15,2024-02-14,1200.00,USD,paid,Storage,1,300.00,300.00,Infrastructure
+Northwind Office Supplies,Office,INV-2001,2024-01-20,2024-02-19,450.50,USD,paid,Desks,3,120.00,360.00,Furniture
+Northwind Office Supplies,Office,INV-2001,2024-01-20,2024-02-19,450.50,USD,paid,Chairs,3,30.17,90.50,Furniture
+Acme Cloud Services,SaaS,INV-1050,2024-04-10,2024-05-10,1500.00,USD,pending,Compute instances,1,1100.00,1100.00,Infrastructure
+Acme Cloud Services,SaaS,INV-1050,2024-04-10,2024-05-10,1500.00,USD,pending,Storage,1,400.00,400.00,Infrastructure
+Global Logistics Partners,Logistics,INV-3002,2024-04-22,2024-05-22,2750.00,USD,overdue,Freight shipping Q2,1,2750.00,2750.00,Shipping

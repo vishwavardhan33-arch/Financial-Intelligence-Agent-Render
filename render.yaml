@@ -1,0 +1,29 @@
+# Render Blueprint: one free web service (Docker) + one free Postgres.
+# Deploy: Render dashboard -> New -> Blueprint -> pick this repo.
+# You will be prompted for LLM_API_KEY (marked sync: false below).
+databases:
+  - name: fia-db
+    plan: free
+    databaseName: financial_agent
+    user: fia
+    ipAllowList: []          # internal connections only
+
+services:
+  - type: web
+    name: financial-intelligence-agent
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: fia-db
+          property: connectionString
+      - key: LLM_API_KEY
+        sync: false          # paste your free Groq key in the dashboard
+      - key: LLM_BASE_URL
+        value: https://api.groq.com/openai/v1
+      - key: LLM_MODEL
+        value: llama-3.3-70b-versatile
+      - key: RATE_LIMIT_PER_MINUTE
+        value: "8"

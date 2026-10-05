@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Financial Intelligence Agent</title>
+  <meta name="description" content="Ask questions about invoices and financial filings. Every answer shows the SQL, the calculation and the passages behind it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Public+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <header class="masthead">
+    <h1 class="wordmark">Financial Intelligence Agent</h1>
+    <p class="model" id="model-line" hidden></p>
+  </header>
+
+  <main class="page">
+    <div class="notice" id="notice" role="status" hidden></div>
+
+    <form class="composer" id="ask-form">
+      <label for="question" class="composer-label">Your question</label>
+      <textarea id="question" name="question" rows="2" maxlength="500" required
+        placeholder="Ask about invoices, margins or filings"></textarea>
+      <div class="composer-row">
+        <p class="hint">Enter to ask. Shift+Enter for a new line.</p>
+        <button type="submit" id="ask-button">Ask</button>
+      </div>
+    </form>
+
+    <section class="starter" id="starter" aria-labelledby="starter-title">
+      <h2 id="starter-title">Try one of these</h2>
+      <ul class="starter-list">
+        <li><button type="button" class="linklike" data-q="How much has each vendor invoiced in total?">How much has each vendor invoiced in total?</button></li>
+        <li><button type="button" class="linklike" data-q="Which invoices are overdue, and who are they from?">Which invoices are overdue, and who are they from?</button></li>
+        <li><button type="button" class="linklike" data-q="By what percentage did Acme Cloud Services' invoice total grow from INV-1001 to INV-1050?">By what percentage did Acme Cloud Services' invoice total grow from INV-1001 to INV-1050?</button></li>
+        <li><button type="button" class="linklike" data-q="What drove the gross margin improvement in fiscal 2024?">What drove the gross margin improvement in fiscal 2024?</button></li>
+      </ul>
+      <p class="starter-note">Out of the box this runs on sample data: four invoices from three vendors, and an excerpt from a fictional company's 10-K. Load your own files to ask about real numbers.</p>
+    </section>
+
+    <div class="log" id="log" aria-live="polite"></div>
+  </main>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

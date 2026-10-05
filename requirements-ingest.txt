@@ -1,0 +1,5 @@
+# Only for turning PDF filings into data/corpus.jsonl on your own machine.
+# Heavy (PyTorch, layout models) -- do NOT install on the web service.
+-r requirements.txt
+docling>=1.0
+sentence-transformers>=3.0

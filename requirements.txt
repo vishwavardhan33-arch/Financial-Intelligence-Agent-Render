@@ -1,0 +1,27 @@
+# Runtime dependencies for the deployed service. Deliberately light enough
+# for a 512 MB instance: no PyTorch, no Docling.
+
+# -- DB + ingestion --
+pandas>=2.2
+openpyxl>=3.1          # .xlsx support in the invoice loader
+SQLAlchemy>=2.0
+psycopg[binary]>=3.1
+
+# -- Retrieval --
+fastembed>=0.4         # BGE embeddings via ONNX Runtime (no torch)
+qdrant-client>=1.9     # runs in-process; no separate Qdrant server needed
+rank-bm25>=0.2
+
+# -- SQL safety --
+sqlglot>=25.0
+
+# -- Agent orchestration --
+langgraph>=0.2
+pydantic>=2.0
+
+# -- LLM provider: any OpenAI-compatible API (Groq by default), plain HTTP --
+httpx>=0.27
+
+# -- API + UI --
+fastapi>=0.110
+uvicorn[standard]>=0.30
